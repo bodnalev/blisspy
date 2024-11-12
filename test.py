@@ -9,8 +9,7 @@ def test_quick():
     certificate = True
     
     result = canonical_form_from_edge_list(
-        Vnr, Vout, Vin, labels=labels, partition=partition,
-        certificate=certificate
+        Vnr, Vout, Vin, 1, labels, partition, certificate
     )
 
     canonical_edges, relabeling = result

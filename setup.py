@@ -48,5 +48,9 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_desc,
     license="GNU",
+    packages=[''],
+    py_modules=['blisspy'],
+    package_data={'': ['*.pxd']},
+    include_package_data=True,
     ext_modules=cythonize(extensions),
 )

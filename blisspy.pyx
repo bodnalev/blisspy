@@ -115,8 +115,7 @@ cdef Graph* bliss_graph_from_labelled_edges(int Vnr, int Lnr, Vout, Vin, labels,
 
     return g
 
-cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr=1, list labels=None,
-                                    list partition=None, bint certificate=False):
+cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition, bint certificate):
     """
     Return an unsorted list of labelled edges of a canonical form.
 
@@ -134,6 +133,12 @@ cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr=1, lis
     """
     if labels is None:
         labels = []
+    if partition is None:
+        partition = []
+    if Lnr is None:
+        Lnr = 1
+    if certificate is None:
+        certificate = False
     # Ensure Vnr does not exceed system limits
     assert <unsigned long>(Vnr) <= <unsigned long>LONG_MAX
 
