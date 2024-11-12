@@ -1,0 +1,4 @@
+include README.md
+recursive-include include *
+recursive-include src *
+recursive-include blisspy *.pyx *.pxd *.py
