@@ -1,6 +1,7 @@
 # distutils: language = c++
 # distutils: extra_compile_args = -std=c++11
 # distutils: libraries = bliss
+# sage_setup: distribution = sagemath-bliss
 
 r"""
 This code is based on the following:
@@ -20,6 +21,10 @@ Implemented functions:
 AUTHORS:
 
     - Jernej Azarija
+
+
+
+The code was modified to suit the flag algebra calculations
 """
 
 # ****************************************************************************
@@ -36,6 +41,7 @@ AUTHORS:
 # ****************************************************************************
 
 from libc.limits cimport LONG_MAX
+from cysignals.memory cimport check_calloc, sig_free
 
 cdef extern from "bliss/graph.hh" namespace "bliss":
 
@@ -51,6 +57,10 @@ cdef extern from "bliss/graph.hh" namespace "bliss":
         void change_color(unsigned int v, unsigned int color)
         const unsigned int* canonical_form(Stats& stats)
 
+cdef extern from "bliss/bliss_find_automorphisms.h":
+
+    void bliss_find_automorphisms(Graph*, void (*)(void*, unsigned int, const unsigned int*), void*, Stats&)
+        
 cdef int encoding_numbits(int n) except -1:
     """
     Return the number of bits needed to encode the numbers from 1 to n.
@@ -64,7 +74,46 @@ cdef int encoding_numbits(int n) except -1:
         i += 1
     return i
 
-cdef Graph* bliss_graph_from_labelled_edges(int Vnr, int Lnr, Vout, Vin, labels, partition):
+cdef void add_gen(void *user_param, unsigned int n, const unsigned int *aut) noexcept:
+    r"""
+    Function called each time a new generator of the automorphism group is
+    found.
+    
+    INPUT:
+
+    - ``user_param`` -- ``void *``; in the current implementation, points toward
+      a Python object which is a pair ``(list_of_current_generators, number of vertices in partition[0])``.
+
+    - ``n`` -- integer; number of points in the graph
+
+    - ``aut`` -- ``int *``; an automorphism of the graph
+    """
+    cdef int tmp = 0
+    cdef int cur = 0
+    cdef list perm = []
+    cdef bint* done
+    gens, nP0 = <object>user_param
+
+    #'done' array for vertices in partition[0]
+    done = <bint*> check_calloc(nP0, sizeof(bint))
+
+    #Transform aut to cycles, only in range(partition[0])
+    while cur < nP0:
+        if not done[cur]:
+            tmp = cur
+            cycle = [cur]
+            done[cur] = True
+
+            while aut[tmp] != cur:
+                tmp = aut[tmp]
+                done[tmp] = True
+                cycle.append(tmp)
+            perm.append(tuple(cycle))
+        cur += 1
+    gens.append(perm)
+    sig_free(done)
+
+cdef Graph* bliss_graph_from_labelled_edges(int Vnr, int Lnr, list Vout, list Vin, list labels, list partition):
     """
     Construct a Bliss Graph from edge lists and labels.
     """
@@ -131,15 +180,10 @@ cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list 
     Returns:
         list or tuple: Canonical edge list, and optionally the relabeling certificate.
     """
-    if labels is None:
-        labels = []
-    if partition is None:
-        partition = []
     if Lnr is None:
         Lnr = 1
     if certificate is None:
         certificate = False
-    # Ensure Vnr does not exceed system limits
     assert <unsigned long>(Vnr) <= <unsigned long>LONG_MAX
 
     cdef const unsigned int* aut
@@ -173,3 +217,37 @@ cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list 
     if certificate:
         return new_edges, relabel
     return new_edges
+
+cpdef automorphism_group_gens_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition):
+    r"""
+    Return the generators of the automorphism group, projected to only the first partition.
+    
+    Parameters:
+        Vnr (int): Number of vertices (vertices are 0 to Vnr - 1).
+        Vout (list): List of source vertices for edges.
+        Vin (list): List of target vertices for edges.
+        Lnr (int, optional): Number of labels. Defaults to 1.
+        labels (list, optional): List of edge labels. Defaults to None.
+        partition (list, optional): Partition of the vertex set. Defaults to None.
+    
+    Returns:
+        list: Generators of the automorphisms, projected to only the first partition.
+    """
+    if Lnr is None:
+        Lnr = 1
+    assert <unsigned long>(Vnr) <= <unsigned long>LONG_MAX
+    
+    cdef Graph* g
+    cdef Stats s
+    
+    cdef list gens = []
+    cdef int nP0 = len(partition[0]) if partition else Vnr
+    cdef tuple data = (gens, nP0)
+    
+    g = bliss_graph_from_labelled_edges(Vnr, Lnr, Vout, Vin, labels, partition)
+    bliss_find_automorphisms(g, add_gen, <void*>data, s)
+    
+    if g is not NULL:
+        del g
+    
+    return gens

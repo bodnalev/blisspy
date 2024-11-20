@@ -17,9 +17,11 @@ blisspy.egg-info/PKG-INFO
 blisspy.egg-info/SOURCES.txt
 blisspy.egg-info/dependency_links.txt
 blisspy.egg-info/top_level.txt
+dist/blisspy-0.1-py3.10-linux-x86_64.egg
 include/bliss/abstractgraph.hh
 include/bliss/bignum.hh
 include/bliss/bliss_C.h
+include/bliss/bliss_find_automorphisms.h
 include/bliss/defs.hh
 include/bliss/digraph.hh
 include/bliss/graph.hh
