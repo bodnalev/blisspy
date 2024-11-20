@@ -88,30 +88,10 @@ cdef void add_gen(void *user_param, unsigned int n, const unsigned int *aut) noe
 
     - ``aut`` -- ``int *``; an automorphism of the graph
     """
-    cdef int tmp = 0
-    cdef int cur = 0
-    cdef list perm = []
-    cdef bint* done
     gens, nP0 = <object>user_param
-
-    #'done' array for vertices in partition[0]
-    done = <bint*> check_calloc(nP0, sizeof(bint))
-
-    #Transform aut to cycles, only in range(partition[0])
-    while cur < nP0:
-        if not done[cur]:
-            tmp = cur
-            cycle = [cur]
-            done[cur] = True
-
-            while aut[tmp] != cur:
-                tmp = aut[tmp]
-                done[tmp] = True
-                cycle.append(tmp)
-            perm.append(tuple(cycle))
-        cur += 1
+    cdef int ii
+    cdef tuple perm = tuple([aut[ii] for ii in range(nP0)])
     gens.append(perm)
-    sig_free(done)
 
 cdef Graph* bliss_graph_from_labelled_edges(int Vnr, int Lnr, list Vout, list Vin, list labels, list partition):
     """
@@ -164,7 +144,7 @@ cdef Graph* bliss_graph_from_labelled_edges(int Vnr, int Lnr, list Vout, list Vi
 
     return g
 
-cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition, bint certificate):
+cpdef tuple canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition):
     """
     Return an unsorted list of labelled edges of a canonical form.
 
@@ -175,15 +155,12 @@ cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list 
         Lnr (int, optional): Number of labels. Defaults to 1.
         labels (list, optional): List of edge labels. Defaults to None.
         partition (list, optional): Partition of the vertex set. Defaults to None.
-        certificate (bool, optional): Whether to return the relabeling certificate. Defaults to False.
 
     Returns:
-        list or tuple: Canonical edge list, and optionally the relabeling certificate.
+        tuple: Canonical edge list, and optionally the relabeling certificate.
     """
     if Lnr is None:
         Lnr = 1
-    if certificate is None:
-        certificate = False
     assert <unsigned long>(Vnr) <= <unsigned long>LONG_MAX
 
     cdef const unsigned int* aut
@@ -208,17 +185,14 @@ cpdef canonical_form_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list 
             lab = labels[i]
         new_edges.append((e, f, lab) if e > f else (f, e, lab))
 
-    if certificate:
-        relabel = {v: aut[v] for v in range(Vnr)}
+    relabel = {v: aut[v] for v in range(Vnr)}
 
     if g is not NULL:
         del g
 
-    if certificate:
-        return new_edges, relabel
-    return new_edges
+    return new_edges, relabel
 
-cpdef automorphism_group_gens_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition):
+cpdef tuple automorphism_group_gens_from_edge_list(int Vnr, list Vout, list Vin, int Lnr, list labels, list partition):
     r"""
     Return the generators of the automorphism group, projected to only the first partition.
     
@@ -250,4 +224,4 @@ cpdef automorphism_group_gens_from_edge_list(int Vnr, list Vout, list Vin, int L
     if g is not NULL:
         del g
     
-    return gens
+    return tuple(gens)
