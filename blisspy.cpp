@@ -12,22 +12,19 @@
         "depends": [
             "/home/bodnalev/Documents/blisspy/include/bliss/bliss_find_automorphisms.h",
             "/home/bodnalev/Documents/blisspy/include/bliss/graph.hh",
-            "/home/bodnalev/sage/local/var/lib/sage/venv-python3.10/lib/python3.10/site-packages/cysignals/macros.h",
-            "/home/bodnalev/sage/local/var/lib/sage/venv-python3.10/lib/python3.10/site-packages/cysignals/struct_signals.h"
+            "/usr/lib/python3/dist-packages/cysignals/macros.h",
+            "/usr/lib/python3/dist-packages/cysignals/struct_signals.h"
         ],
         "extra_compile_args": [
             "-std=c++11",
             "-O3",
-            "-Wall",
-            "-Wextra",
-            "--pedantic",
             "-fPIC"
         ],
         "extra_link_args": [
             "-lpari"
         ],
         "include_dirs": [
-            "/home/bodnalev/sage/local/var/lib/sage/venv-python3.10/lib/python3.10/site-packages/cysignals",
+            "/usr/lib/python3/dist-packages/cysignals",
             "/home/bodnalev/Documents/blisspy/include",
             "/home/bodnalev/Documents/blisspy/include/bliss"
         ],
@@ -38,16 +35,16 @@
         "name": "blisspy",
         "sources": [
             "blisspy.pyx",
-            "src/defs.cc",
-            "src/utils.cc",
-            "src/graph.cc",
-            "src/digraph.cc",
-            "src/orbit.cc",
-            "src/partition.cc",
-            "src/bliss.cc",
-            "src/bliss_C.cc",
-            "src/uintseqhash.cc",
-            "src/abstractgraph.cc"
+            "/home/bodnalev/Documents/blisspy/src/defs.cc",
+            "/home/bodnalev/Documents/blisspy/src/utils.cc",
+            "/home/bodnalev/Documents/blisspy/src/graph.cc",
+            "/home/bodnalev/Documents/blisspy/src/digraph.cc",
+            "/home/bodnalev/Documents/blisspy/src/orbit.cc",
+            "/home/bodnalev/Documents/blisspy/src/partition.cc",
+            "/home/bodnalev/Documents/blisspy/src/bliss.cc",
+            "/home/bodnalev/Documents/blisspy/src/bliss_C.cc",
+            "/home/bodnalev/Documents/blisspy/src/uintseqhash.cc",
+            "/home/bodnalev/Documents/blisspy/src/abstractgraph.cc"
         ]
     },
     "module_name": "blisspy"
@@ -1541,6 +1538,7 @@ static const char *__pyx_filename;
 
 static const char *__pyx_f[] = {
   "blisspy.pyx",
+  "signals.pxd",
   "memory.pxd",
   "type.pxd",
 };
@@ -1700,6 +1698,25 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_GetAttrStrNoError(PyObject* obj, P
 
 /* GetBuiltinName.proto */
 static PyObject *__Pyx_GetBuiltinName(PyObject *name);
+
+/* GCCDiagnostics.proto */
+#if !defined(__INTEL_COMPILER) && defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
+#define __Pyx_HAS_GCC_DIAGNOSTIC
+#endif
+
+/* BuildPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_BuildFromAscii(Py_ssize_t ulength, char* chars, int clength,
+                                                int prepend_sign, char padding_char);
+
+/* IncludeStringH.proto */
+#include <string.h>
+
+/* CIntToPyUnicode.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_size_t(size_t value, Py_ssize_t width, char padding_char, char format_char);
+
+/* JoinPyUnicode.proto */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char);
 
 /* PyFunctionFastCall.proto */
 #if CYTHON_FAST_PYCALL
@@ -1895,9 +1912,6 @@ static PyObject* __Pyx_PyInt_AddObjC(PyObject *op1, PyObject *op2, long intval, 
 static CYTHON_INLINE PyObject* __Pyx_PyList_FromArray(PyObject *const *src, Py_ssize_t n);
 static CYTHON_INLINE PyObject* __Pyx_PyTuple_FromArray(PyObject *const *src, Py_ssize_t n);
 #endif
-
-/* IncludeStringH.proto */
-#include <string.h>
 
 /* BytesEquals.proto */
 static CYTHON_INLINE int __Pyx_PyBytes_Equals(PyObject* s1, PyObject* s2, int equals);
@@ -2194,11 +2208,6 @@ static void __pyx_insert_code_object(int code_line, PyCodeObject* code_object);
 static void __Pyx_AddTraceback(const char *funcname, int c_line,
                                int py_line, const char *filename);
 
-/* GCCDiagnostics.proto */
-#if !defined(__INTEL_COMPILER) && defined(__GNUC__) && (__GNUC__ > 4 || (__GNUC__ == 4 && __GNUC_MINOR__ >= 6))
-#define __Pyx_HAS_GCC_DIAGNOSTIC
-#endif
-
 /* CIntFromPy.proto */
 static CYTHON_INLINE int __Pyx_PyInt_As_int(PyObject *);
 
@@ -2318,7 +2327,8 @@ static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_MemoryError;
 static PyObject *__pyx_builtin_AssertionError;
 /* #### Code section: string_decls ### */
-static const char __pyx_k__5[] = "?";
+static const char __pyx_k_[] = " * ";
+static const char __pyx_k__6[] = "?";
 static const char __pyx_k_Lnr[] = "Lnr";
 static const char __pyx_k_Vin[] = "Vin";
 static const char __pyx_k_Vnr[] = "Vnr";
@@ -2326,6 +2336,7 @@ static const char __pyx_k_Vout[] = "Vout";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_bytes[] = " bytes";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_append[] = "append";
 static const char __pyx_k_labels[] = "labels";
@@ -2337,9 +2348,9 @@ static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_AssertionError[] = "AssertionError";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_failed_to_allocate[] = "failed to allocate ";
 static const char __pyx_k_failed_to_allocate_s_bytes[] = "failed to allocate %s bytes";
 static const char __pyx_k_Allocation_failed_for_Graph[] = "Allocation failed for Graph.";
-static const char __pyx_k_failed_to_allocate_s_s_bytes[] = "failed to allocate %s * %s bytes";
 static const char __pyx_k_canonical_form_from_edge_list[] = "canonical_form_from_edge_list";
 static const char __pyx_k_This_code_is_based_on_the_follo[] = "\nThis code is based on the following:\n\n\nInterface with bliss: graph (iso/auto)morphism\n\nImplemented functions:\n\n.. csv-table::\n    :class: contentstable\n    :widths: 30, 70\n    :delim: |\n\n    :meth:`canonical_form_from_edge_list` | Return the canonical form from a given graph (could be multigraph)\n\nAUTHORS:\n\n    - Jernej Azarija\n\n\n\nThe code was modified to suit the flag algebra calculations\n";
 static const char __pyx_k_automorphism_group_gens_from_edg[] = "automorphism_group_gens_from_edge_list";
@@ -2399,23 +2410,25 @@ typedef struct {
   #endif
   #if CYTHON_USE_MODULE_STATE
   #endif
-  PyObject *__pyx_kp_s_Allocation_failed_for_Graph;
+  PyObject *__pyx_kp_u_;
+  PyObject *__pyx_kp_u_Allocation_failed_for_Graph;
   PyObject *__pyx_n_s_AssertionError;
   PyObject *__pyx_n_s_Lnr;
   PyObject *__pyx_n_s_MemoryError;
   PyObject *__pyx_n_s_Vin;
   PyObject *__pyx_n_s_Vnr;
   PyObject *__pyx_n_s_Vout;
-  PyObject *__pyx_n_s__5;
+  PyObject *__pyx_n_s__6;
   PyObject *__pyx_n_s_append;
   PyObject *__pyx_n_s_asyncio_coroutines;
   PyObject *__pyx_n_s_automorphism_group_gens_from_edg;
   PyObject *__pyx_n_s_blisspy;
   PyObject *__pyx_kp_s_blisspy_pyx;
+  PyObject *__pyx_kp_u_bytes;
   PyObject *__pyx_n_s_canonical_form_from_edge_list;
   PyObject *__pyx_n_s_cline_in_traceback;
-  PyObject *__pyx_kp_s_failed_to_allocate_s_bytes;
-  PyObject *__pyx_kp_s_failed_to_allocate_s_s_bytes;
+  PyObject *__pyx_kp_u_failed_to_allocate;
+  PyObject *__pyx_kp_u_failed_to_allocate_s_bytes;
   PyObject *__pyx_n_s_is_coroutine;
   PyObject *__pyx_n_s_labels;
   PyObject *__pyx_n_s_main;
@@ -2424,10 +2437,10 @@ typedef struct {
   PyObject *__pyx_n_s_range;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_int_1;
-  PyObject *__pyx_tuple_;
   PyObject *__pyx_tuple__2;
-  PyObject *__pyx_codeobj__3;
+  PyObject *__pyx_tuple__3;
   PyObject *__pyx_codeobj__4;
+  PyObject *__pyx_codeobj__5;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -2471,23 +2484,25 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_FusedFunctionType);
   #endif
   Py_CLEAR(clear_module_state->__pyx_ptype_7cpython_4type_type);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_Allocation_failed_for_Graph);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_Allocation_failed_for_Graph);
   Py_CLEAR(clear_module_state->__pyx_n_s_AssertionError);
   Py_CLEAR(clear_module_state->__pyx_n_s_Lnr);
   Py_CLEAR(clear_module_state->__pyx_n_s_MemoryError);
   Py_CLEAR(clear_module_state->__pyx_n_s_Vin);
   Py_CLEAR(clear_module_state->__pyx_n_s_Vnr);
   Py_CLEAR(clear_module_state->__pyx_n_s_Vout);
-  Py_CLEAR(clear_module_state->__pyx_n_s__5);
+  Py_CLEAR(clear_module_state->__pyx_n_s__6);
   Py_CLEAR(clear_module_state->__pyx_n_s_append);
   Py_CLEAR(clear_module_state->__pyx_n_s_asyncio_coroutines);
   Py_CLEAR(clear_module_state->__pyx_n_s_automorphism_group_gens_from_edg);
   Py_CLEAR(clear_module_state->__pyx_n_s_blisspy);
   Py_CLEAR(clear_module_state->__pyx_kp_s_blisspy_pyx);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_bytes);
   Py_CLEAR(clear_module_state->__pyx_n_s_canonical_form_from_edge_list);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_failed_to_allocate_s_bytes);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_failed_to_allocate_s_s_bytes);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_failed_to_allocate);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_failed_to_allocate_s_bytes);
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
   Py_CLEAR(clear_module_state->__pyx_n_s_labels);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
@@ -2496,10 +2511,10 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_range);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_int_1);
-  Py_CLEAR(clear_module_state->__pyx_tuple_);
   Py_CLEAR(clear_module_state->__pyx_tuple__2);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__3);
+  Py_CLEAR(clear_module_state->__pyx_tuple__3);
   Py_CLEAR(clear_module_state->__pyx_codeobj__4);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__5);
   return 0;
 }
 #endif
@@ -2521,23 +2536,25 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
   Py_VISIT(traverse_module_state->__pyx_ptype_7cpython_4type_type);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_Allocation_failed_for_Graph);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_Allocation_failed_for_Graph);
   Py_VISIT(traverse_module_state->__pyx_n_s_AssertionError);
   Py_VISIT(traverse_module_state->__pyx_n_s_Lnr);
   Py_VISIT(traverse_module_state->__pyx_n_s_MemoryError);
   Py_VISIT(traverse_module_state->__pyx_n_s_Vin);
   Py_VISIT(traverse_module_state->__pyx_n_s_Vnr);
   Py_VISIT(traverse_module_state->__pyx_n_s_Vout);
-  Py_VISIT(traverse_module_state->__pyx_n_s__5);
+  Py_VISIT(traverse_module_state->__pyx_n_s__6);
   Py_VISIT(traverse_module_state->__pyx_n_s_append);
   Py_VISIT(traverse_module_state->__pyx_n_s_asyncio_coroutines);
   Py_VISIT(traverse_module_state->__pyx_n_s_automorphism_group_gens_from_edg);
   Py_VISIT(traverse_module_state->__pyx_n_s_blisspy);
   Py_VISIT(traverse_module_state->__pyx_kp_s_blisspy_pyx);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_bytes);
   Py_VISIT(traverse_module_state->__pyx_n_s_canonical_form_from_edge_list);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_failed_to_allocate_s_bytes);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_failed_to_allocate_s_s_bytes);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_failed_to_allocate);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_failed_to_allocate_s_bytes);
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
   Py_VISIT(traverse_module_state->__pyx_n_s_labels);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
@@ -2546,10 +2563,10 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_range);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_int_1);
-  Py_VISIT(traverse_module_state->__pyx_tuple_);
   Py_VISIT(traverse_module_state->__pyx_tuple__2);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__3);
+  Py_VISIT(traverse_module_state->__pyx_tuple__3);
   Py_VISIT(traverse_module_state->__pyx_codeobj__4);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__5);
   return 0;
 }
 #endif
@@ -2603,23 +2620,25 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #endif
 #if CYTHON_USE_MODULE_STATE
 #endif
-#define __pyx_kp_s_Allocation_failed_for_Graph __pyx_mstate_global->__pyx_kp_s_Allocation_failed_for_Graph
+#define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
+#define __pyx_kp_u_Allocation_failed_for_Graph __pyx_mstate_global->__pyx_kp_u_Allocation_failed_for_Graph
 #define __pyx_n_s_AssertionError __pyx_mstate_global->__pyx_n_s_AssertionError
 #define __pyx_n_s_Lnr __pyx_mstate_global->__pyx_n_s_Lnr
 #define __pyx_n_s_MemoryError __pyx_mstate_global->__pyx_n_s_MemoryError
 #define __pyx_n_s_Vin __pyx_mstate_global->__pyx_n_s_Vin
 #define __pyx_n_s_Vnr __pyx_mstate_global->__pyx_n_s_Vnr
 #define __pyx_n_s_Vout __pyx_mstate_global->__pyx_n_s_Vout
-#define __pyx_n_s__5 __pyx_mstate_global->__pyx_n_s__5
+#define __pyx_n_s__6 __pyx_mstate_global->__pyx_n_s__6
 #define __pyx_n_s_append __pyx_mstate_global->__pyx_n_s_append
 #define __pyx_n_s_asyncio_coroutines __pyx_mstate_global->__pyx_n_s_asyncio_coroutines
 #define __pyx_n_s_automorphism_group_gens_from_edg __pyx_mstate_global->__pyx_n_s_automorphism_group_gens_from_edg
 #define __pyx_n_s_blisspy __pyx_mstate_global->__pyx_n_s_blisspy
 #define __pyx_kp_s_blisspy_pyx __pyx_mstate_global->__pyx_kp_s_blisspy_pyx
+#define __pyx_kp_u_bytes __pyx_mstate_global->__pyx_kp_u_bytes
 #define __pyx_n_s_canonical_form_from_edge_list __pyx_mstate_global->__pyx_n_s_canonical_form_from_edge_list
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
-#define __pyx_kp_s_failed_to_allocate_s_bytes __pyx_mstate_global->__pyx_kp_s_failed_to_allocate_s_bytes
-#define __pyx_kp_s_failed_to_allocate_s_s_bytes __pyx_mstate_global->__pyx_kp_s_failed_to_allocate_s_s_bytes
+#define __pyx_kp_u_failed_to_allocate __pyx_mstate_global->__pyx_kp_u_failed_to_allocate
+#define __pyx_kp_u_failed_to_allocate_s_bytes __pyx_mstate_global->__pyx_kp_u_failed_to_allocate_s_bytes
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
 #define __pyx_n_s_labels __pyx_mstate_global->__pyx_n_s_labels
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
@@ -2628,16 +2647,16 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_range __pyx_mstate_global->__pyx_n_s_range
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_int_1 __pyx_mstate_global->__pyx_int_1
-#define __pyx_tuple_ __pyx_mstate_global->__pyx_tuple_
 #define __pyx_tuple__2 __pyx_mstate_global->__pyx_tuple__2
-#define __pyx_codeobj__3 __pyx_mstate_global->__pyx_codeobj__3
+#define __pyx_tuple__3 __pyx_mstate_global->__pyx_tuple__3
 #define __pyx_codeobj__4 __pyx_mstate_global->__pyx_codeobj__4
+#define __pyx_codeobj__5 __pyx_mstate_global->__pyx_codeobj__5
 /* #### Code section: module_code ### */
 
-/* "signals.pxd":61
+/* "signals.pxd":57
  * # (PyErr_Occurred() is non-NULL). To Cython, it will look like
  * # cython_check_exception() actually raised the exception.
- * cdef inline void cython_check_exception() except * nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void cython_check_exception() nogil except *:             # <<<<<<<<<<<<<<
  *     pass
  * 
  */
@@ -2647,10 +2666,10 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals_cython_check_exception(voi
   /* function exit code */
 }
 
-/* "signals.pxd":67
- * cdef void verify_exc_value() noexcept
+/* "signals.pxd":63
+ * cdef void verify_exc_value()
  * 
- * cdef inline PyObject* sig_occurred() noexcept:             # <<<<<<<<<<<<<<
+ * cdef inline PyObject* sig_occurred():             # <<<<<<<<<<<<<<
  *     """
  *     Borrowed reference to the exception which is currently being
  */
@@ -2658,8 +2677,11 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals_cython_check_exception(voi
 static CYTHON_INLINE PyObject *__pyx_f_9cysignals_7signals_sig_occurred(void) {
   PyObject *__pyx_r;
   int __pyx_t_1;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
 
-  /* "signals.pxd":81
+  /* "signals.pxd":77
  *     exception is stored somewhere.
  *     """
  *     if unlikely(cysigs.exc_value is not NULL):             # <<<<<<<<<<<<<<
@@ -2669,16 +2691,16 @@ static CYTHON_INLINE PyObject *__pyx_f_9cysignals_7signals_sig_occurred(void) {
   __pyx_t_1 = (unlikely((cysigs.exc_value != NULL)) != 0);
   if (__pyx_t_1) {
 
-    /* "signals.pxd":82
+    /* "signals.pxd":78
  *     """
  *     if unlikely(cysigs.exc_value is not NULL):
  *         verify_exc_value()             # <<<<<<<<<<<<<<
  *     return cysigs.exc_value
  * 
  */
-    __pyx_f_9cysignals_7signals_verify_exc_value();
+    __pyx_f_9cysignals_7signals_verify_exc_value(); if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 78, __pyx_L1_error)
 
-    /* "signals.pxd":81
+    /* "signals.pxd":77
  *     exception is stored somewhere.
  *     """
  *     if unlikely(cysigs.exc_value is not NULL):             # <<<<<<<<<<<<<<
@@ -2687,7 +2709,7 @@ static CYTHON_INLINE PyObject *__pyx_f_9cysignals_7signals_sig_occurred(void) {
  */
   }
 
-  /* "signals.pxd":83
+  /* "signals.pxd":79
  *     if unlikely(cysigs.exc_value is not NULL):
  *         verify_exc_value()
  *     return cysigs.exc_value             # <<<<<<<<<<<<<<
@@ -2697,40 +2719,43 @@ static CYTHON_INLINE PyObject *__pyx_f_9cysignals_7signals_sig_occurred(void) {
   __pyx_r = cysigs.exc_value;
   goto __pyx_L0;
 
-  /* "signals.pxd":67
- * cdef void verify_exc_value() noexcept
+  /* "signals.pxd":63
+ * cdef void verify_exc_value()
  * 
- * cdef inline PyObject* sig_occurred() noexcept:             # <<<<<<<<<<<<<<
+ * cdef inline PyObject* sig_occurred():             # <<<<<<<<<<<<<<
  *     """
  *     Borrowed reference to the exception which is currently being
  */
 
   /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("cysignals.signals.sig_occurred", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
   __pyx_L0:;
   return __pyx_r;
 }
 
-/* "signals.pxd":97
+/* "signals.pxd":93
  * 
  * 
- * cdef inline void __generate_declarations() noexcept:             # <<<<<<<<<<<<<<
+ * cdef inline void __generate_declarations():             # <<<<<<<<<<<<<<
  *     cysigs
  *     _sig_on_interrupt_received
  */
 
 static CYTHON_INLINE void __pyx_f_9cysignals_7signals___generate_declarations(void) {
 
-  /* "signals.pxd":98
+  /* "signals.pxd":94
  * 
- * cdef inline void __generate_declarations() noexcept:
+ * cdef inline void __generate_declarations():
  *     cysigs             # <<<<<<<<<<<<<<
  *     _sig_on_interrupt_received
  *     _sig_on_recover
  */
   (void)(cysigs);
 
-  /* "signals.pxd":99
- * cdef inline void __generate_declarations() noexcept:
+  /* "signals.pxd":95
+ * cdef inline void __generate_declarations():
  *     cysigs
  *     _sig_on_interrupt_received             # <<<<<<<<<<<<<<
  *     _sig_on_recover
@@ -2738,7 +2763,7 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals___generate_declarations(vo
  */
   (void)(_sig_on_interrupt_received);
 
-  /* "signals.pxd":100
+  /* "signals.pxd":96
  *     cysigs
  *     _sig_on_interrupt_received
  *     _sig_on_recover             # <<<<<<<<<<<<<<
@@ -2747,7 +2772,7 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals___generate_declarations(vo
  */
   (void)(_sig_on_recover);
 
-  /* "signals.pxd":101
+  /* "signals.pxd":97
  *     _sig_on_interrupt_received
  *     _sig_on_recover
  *     _sig_off_warning             # <<<<<<<<<<<<<<
@@ -2755,17 +2780,17 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals___generate_declarations(vo
  */
   (void)(_sig_off_warning);
 
-  /* "signals.pxd":102
+  /* "signals.pxd":98
  *     _sig_on_recover
  *     _sig_off_warning
  *     print_backtrace             # <<<<<<<<<<<<<<
  */
   (void)(print_backtrace);
 
-  /* "signals.pxd":97
+  /* "signals.pxd":93
  * 
  * 
- * cdef inline void __generate_declarations() noexcept:             # <<<<<<<<<<<<<<
+ * cdef inline void __generate_declarations():             # <<<<<<<<<<<<<<
  *     cysigs
  *     _sig_on_interrupt_received
  */
@@ -2776,7 +2801,7 @@ static CYTHON_INLINE void __pyx_f_9cysignals_7signals___generate_declarations(vo
 /* "cysignals/memory.pxd":36
  * 
  * 
- * cdef inline void* sig_malloc "sig_malloc"(size_t n) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_malloc "sig_malloc"(size_t n) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = malloc(n)
  */
@@ -2787,7 +2812,7 @@ static CYTHON_INLINE void *sig_malloc(size_t __pyx_v_n) {
 
   /* "cysignals/memory.pxd":37
  * 
- * cdef inline void* sig_malloc "sig_malloc"(size_t n) noexcept nogil:
+ * cdef inline void* sig_malloc "sig_malloc"(size_t n) nogil:
  *     sig_block()             # <<<<<<<<<<<<<<
  *     cdef void* ret = malloc(n)
  *     sig_unblock()
@@ -2795,7 +2820,7 @@ static CYTHON_INLINE void *sig_malloc(size_t __pyx_v_n) {
   sig_block();
 
   /* "cysignals/memory.pxd":38
- * cdef inline void* sig_malloc "sig_malloc"(size_t n) noexcept nogil:
+ * cdef inline void* sig_malloc "sig_malloc"(size_t n) nogil:
  *     sig_block()
  *     cdef void* ret = malloc(n)             # <<<<<<<<<<<<<<
  *     sig_unblock()
@@ -2825,7 +2850,7 @@ static CYTHON_INLINE void *sig_malloc(size_t __pyx_v_n) {
   /* "cysignals/memory.pxd":36
  * 
  * 
- * cdef inline void* sig_malloc "sig_malloc"(size_t n) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_malloc "sig_malloc"(size_t n) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = malloc(n)
  */
@@ -2838,7 +2863,7 @@ static CYTHON_INLINE void *sig_malloc(size_t __pyx_v_n) {
 /* "cysignals/memory.pxd":43
  * 
  * 
- * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = realloc(ptr, size)
  */
@@ -2849,7 +2874,7 @@ static CYTHON_INLINE void *sig_realloc(void *__pyx_v_ptr, size_t __pyx_v_size) {
 
   /* "cysignals/memory.pxd":44
  * 
- * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) noexcept nogil:
+ * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) nogil:
  *     sig_block()             # <<<<<<<<<<<<<<
  *     cdef void* ret = realloc(ptr, size)
  *     sig_unblock()
@@ -2857,7 +2882,7 @@ static CYTHON_INLINE void *sig_realloc(void *__pyx_v_ptr, size_t __pyx_v_size) {
   sig_block();
 
   /* "cysignals/memory.pxd":45
- * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) noexcept nogil:
+ * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) nogil:
  *     sig_block()
  *     cdef void* ret = realloc(ptr, size)             # <<<<<<<<<<<<<<
  *     sig_unblock()
@@ -2887,7 +2912,7 @@ static CYTHON_INLINE void *sig_realloc(void *__pyx_v_ptr, size_t __pyx_v_size) {
   /* "cysignals/memory.pxd":43
  * 
  * 
- * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_realloc "sig_realloc"(void* ptr, size_t size) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = realloc(ptr, size)
  */
@@ -2900,7 +2925,7 @@ static CYTHON_INLINE void *sig_realloc(void *__pyx_v_ptr, size_t __pyx_v_size) {
 /* "cysignals/memory.pxd":50
  * 
  * 
- * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = calloc(nmemb, size)
  */
@@ -2911,7 +2936,7 @@ static CYTHON_INLINE void *sig_calloc(size_t __pyx_v_nmemb, size_t __pyx_v_size)
 
   /* "cysignals/memory.pxd":51
  * 
- * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) noexcept nogil:
+ * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) nogil:
  *     sig_block()             # <<<<<<<<<<<<<<
  *     cdef void* ret = calloc(nmemb, size)
  *     sig_unblock()
@@ -2919,7 +2944,7 @@ static CYTHON_INLINE void *sig_calloc(size_t __pyx_v_nmemb, size_t __pyx_v_size)
   sig_block();
 
   /* "cysignals/memory.pxd":52
- * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) noexcept nogil:
+ * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) nogil:
  *     sig_block()
  *     cdef void* ret = calloc(nmemb, size)             # <<<<<<<<<<<<<<
  *     sig_unblock()
@@ -2949,7 +2974,7 @@ static CYTHON_INLINE void *sig_calloc(size_t __pyx_v_nmemb, size_t __pyx_v_size)
   /* "cysignals/memory.pxd":50
  * 
  * 
- * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void* sig_calloc "sig_calloc"(size_t nmemb, size_t size) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     cdef void* ret = calloc(nmemb, size)
  */
@@ -2962,7 +2987,7 @@ static CYTHON_INLINE void *sig_calloc(size_t __pyx_v_nmemb, size_t __pyx_v_size)
 /* "cysignals/memory.pxd":57
  * 
  * 
- * cdef inline void sig_free "sig_free"(void* ptr) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void sig_free "sig_free"(void* ptr) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     free(ptr)
  */
@@ -2971,7 +2996,7 @@ static CYTHON_INLINE void sig_free(void *__pyx_v_ptr) {
 
   /* "cysignals/memory.pxd":58
  * 
- * cdef inline void sig_free "sig_free"(void* ptr) noexcept nogil:
+ * cdef inline void sig_free "sig_free"(void* ptr) nogil:
  *     sig_block()             # <<<<<<<<<<<<<<
  *     free(ptr)
  *     sig_unblock()
@@ -2979,7 +3004,7 @@ static CYTHON_INLINE void sig_free(void *__pyx_v_ptr) {
   sig_block();
 
   /* "cysignals/memory.pxd":59
- * cdef inline void sig_free "sig_free"(void* ptr) noexcept nogil:
+ * cdef inline void sig_free "sig_free"(void* ptr) nogil:
  *     sig_block()
  *     free(ptr)             # <<<<<<<<<<<<<<
  *     sig_unblock()
@@ -2999,7 +3024,7 @@ static CYTHON_INLINE void sig_free(void *__pyx_v_ptr) {
   /* "cysignals/memory.pxd":57
  * 
  * 
- * cdef inline void sig_free "sig_free"(void* ptr) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline void sig_free "sig_free"(void* ptr) nogil:             # <<<<<<<<<<<<<<
  *     sig_block()
  *     free(ptr)
  */
@@ -3010,7 +3035,7 @@ static CYTHON_INLINE void sig_free(void *__pyx_v_ptr) {
 /* "cysignals/memory.pxd":64
  * 
  * @cython.cdivision(True)
- * cdef inline size_t mul_overflowcheck(size_t a, size_t b) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline size_t mul_overflowcheck(size_t a, size_t b) nogil:             # <<<<<<<<<<<<<<
  *     """
  *     Return a*b, checking for overflow. Assume that a > 0.
  */
@@ -3099,7 +3124,7 @@ static CYTHON_INLINE size_t __pyx_f_9cysignals_6memory_mul_overflowcheck(size_t 
   /* "cysignals/memory.pxd":64
  * 
  * @cython.cdivision(True)
- * cdef inline size_t mul_overflowcheck(size_t a, size_t b) noexcept nogil:             # <<<<<<<<<<<<<<
+ * cdef inline size_t mul_overflowcheck(size_t a, size_t b) nogil:             # <<<<<<<<<<<<<<
  *     """
  *     Return a*b, checking for overflow. Assume that a > 0.
  */
@@ -3123,9 +3148,12 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_allocarray(size_t __
   void *__pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
+  size_t __pyx_t_2;
+  void *__pyx_t_3;
   PyObject *__pyx_t_4 = NULL;
+  Py_ssize_t __pyx_t_5;
+  Py_UCS4 __pyx_t_6;
+  PyObject *__pyx_t_7 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3167,7 +3195,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_allocarray(size_t __
  *     cdef void* ret = sig_malloc(n)
  *     if unlikely(ret == NULL):
  */
-  __pyx_v_n = __pyx_f_9cysignals_6memory_mul_overflowcheck(__pyx_v_nmemb, __pyx_v_size);
+  __pyx_t_2 = __pyx_f_9cysignals_6memory_mul_overflowcheck(__pyx_v_nmemb, __pyx_v_size); if (unlikely(__pyx_t_2 == ((size_t)-1) && PyErr_Occurred())) __PYX_ERR(2, 84, __pyx_L1_error)
+  __pyx_v_n = __pyx_t_2;
 
   /* "cysignals/memory.pxd":85
  *         return NULL
@@ -3176,7 +3205,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_allocarray(size_t __
  *     if unlikely(ret == NULL):
  *         raise MemoryError("failed to allocate %s * %s bytes" % (nmemb, size))
  */
-  __pyx_v_ret = sig_malloc(__pyx_v_n);
+  __pyx_t_3 = sig_malloc(__pyx_v_n); if (unlikely(__pyx_t_3 == ((void *)NULL) && PyErr_Occurred())) __PYX_ERR(2, 85, __pyx_L1_error)
+  __pyx_v_ret = __pyx_t_3;
 
   /* "cysignals/memory.pxd":86
  *     cdef size_t n = mul_overflowcheck(nmemb, size)
@@ -3195,27 +3225,43 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_allocarray(size_t __
  *     return ret
  * 
  */
-    __pyx_t_2 = __Pyx_PyInt_FromSize_t(__pyx_v_nmemb); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 87, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyInt_FromSize_t(__pyx_v_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 87, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 87, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 87, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2)) __PYX_ERR(1, 87, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3)) __PYX_ERR(1, 87, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_failed_to_allocate_s_s_bytes, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 87, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_5 = 0;
+    __pyx_t_6 = 127;
+    __Pyx_INCREF(__pyx_kp_u_failed_to_allocate);
+    __pyx_t_5 += 19;
+    __Pyx_GIVEREF(__pyx_kp_u_failed_to_allocate);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_u_failed_to_allocate);
+    __pyx_t_7 = __Pyx_PyUnicode_From_size_t(__pyx_v_nmemb, 0, ' ', 'd'); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 87, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __Pyx_INCREF(__pyx_kp_u_);
+    __pyx_t_5 += 3;
+    __Pyx_GIVEREF(__pyx_kp_u_);
+    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_u_);
+    __pyx_t_7 = __Pyx_PyUnicode_From_size_t(__pyx_v_size, 0, ' ', 'd'); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 87, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __Pyx_INCREF(__pyx_kp_u_bytes);
+    __pyx_t_5 += 6;
+    __Pyx_GIVEREF(__pyx_kp_u_bytes);
+    PyTuple_SET_ITEM(__pyx_t_4, 4, __pyx_kp_u_bytes);
+    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 87, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 87, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 87, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_4, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __PYX_ERR(1, 87, __pyx_L1_error)
+    __PYX_ERR(2, 87, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":86
  *     cdef size_t n = mul_overflowcheck(nmemb, size)
@@ -3246,9 +3292,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_allocarray(size_t __
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_AddTraceback("cysignals.memory.check_allocarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3270,9 +3315,12 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
   void *__pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
+  size_t __pyx_t_2;
+  void *__pyx_t_3;
   PyObject *__pyx_t_4 = NULL;
+  Py_ssize_t __pyx_t_5;
+  Py_UCS4 __pyx_t_6;
+  PyObject *__pyx_t_7 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3295,7 +3343,7 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
  *         return NULL
  *     cdef size_t n = mul_overflowcheck(nmemb, size)
  */
-    sig_free(__pyx_v_ptr);
+    sig_free(__pyx_v_ptr); if (unlikely(PyErr_Occurred())) __PYX_ERR(2, 100, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":101
  *     if nmemb == 0:
@@ -3323,7 +3371,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
  *     cdef void* ret = sig_realloc(ptr, n)
  *     if unlikely(ret == NULL):
  */
-  __pyx_v_n = __pyx_f_9cysignals_6memory_mul_overflowcheck(__pyx_v_nmemb, __pyx_v_size);
+  __pyx_t_2 = __pyx_f_9cysignals_6memory_mul_overflowcheck(__pyx_v_nmemb, __pyx_v_size); if (unlikely(__pyx_t_2 == ((size_t)-1) && PyErr_Occurred())) __PYX_ERR(2, 102, __pyx_L1_error)
+  __pyx_v_n = __pyx_t_2;
 
   /* "cysignals/memory.pxd":103
  *         return NULL
@@ -3332,7 +3381,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
  *     if unlikely(ret == NULL):
  *         raise MemoryError("failed to allocate %s * %s bytes" % (nmemb, size))
  */
-  __pyx_v_ret = sig_realloc(__pyx_v_ptr, __pyx_v_n);
+  __pyx_t_3 = sig_realloc(__pyx_v_ptr, __pyx_v_n); if (unlikely(__pyx_t_3 == ((void *)NULL) && PyErr_Occurred())) __PYX_ERR(2, 103, __pyx_L1_error)
+  __pyx_v_ret = __pyx_t_3;
 
   /* "cysignals/memory.pxd":104
  *     cdef size_t n = mul_overflowcheck(nmemb, size)
@@ -3351,27 +3401,43 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
  *     return ret
  * 
  */
-    __pyx_t_2 = __Pyx_PyInt_FromSize_t(__pyx_v_nmemb); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 105, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyInt_FromSize_t(__pyx_v_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 105, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 105, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(5); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2)) __PYX_ERR(1, 105, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3)) __PYX_ERR(1, 105, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_failed_to_allocate_s_s_bytes, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 105, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_5 = 0;
+    __pyx_t_6 = 127;
+    __Pyx_INCREF(__pyx_kp_u_failed_to_allocate);
+    __pyx_t_5 += 19;
+    __Pyx_GIVEREF(__pyx_kp_u_failed_to_allocate);
+    PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_kp_u_failed_to_allocate);
+    __pyx_t_7 = __Pyx_PyUnicode_From_size_t(__pyx_v_nmemb, 0, ' ', 'd'); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __Pyx_INCREF(__pyx_kp_u_);
+    __pyx_t_5 += 3;
+    __Pyx_GIVEREF(__pyx_kp_u_);
+    PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_kp_u_);
+    __pyx_t_7 = __Pyx_PyUnicode_From_size_t(__pyx_v_size, 0, ' ', 'd'); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_5 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_7);
+    __Pyx_GIVEREF(__pyx_t_7);
+    PyTuple_SET_ITEM(__pyx_t_4, 3, __pyx_t_7);
+    __pyx_t_7 = 0;
+    __Pyx_INCREF(__pyx_kp_u_bytes);
+    __pyx_t_5 += 6;
+    __Pyx_GIVEREF(__pyx_kp_u_bytes);
+    PyTuple_SET_ITEM(__pyx_t_4, 4, __pyx_kp_u_bytes);
+    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_4, 5, __pyx_t_5, __pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(2, 105, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 105, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 105, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_4, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __PYX_ERR(1, 105, __pyx_L1_error)
+    __PYX_ERR(2, 105, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":104
  *     cdef size_t n = mul_overflowcheck(nmemb, size)
@@ -3402,9 +3468,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_reallocarray(void *_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_7);
   __Pyx_AddTraceback("cysignals.memory.check_reallocarray", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3425,8 +3490,9 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_malloc(size_t __pyx_
   void *__pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
+  void *__pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3468,7 +3534,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_malloc(size_t __pyx_
  *     if unlikely(ret == NULL):
  *         raise MemoryError("failed to allocate %s bytes" % n)
  */
-  __pyx_v_ret = sig_malloc(__pyx_v_n);
+  __pyx_t_2 = sig_malloc(__pyx_v_n); if (unlikely(__pyx_t_2 == ((void *)NULL) && PyErr_Occurred())) __PYX_ERR(2, 115, __pyx_L1_error)
+  __pyx_v_ret = __pyx_t_2;
 
   /* "cysignals/memory.pxd":116
  *         return NULL
@@ -3487,17 +3554,17 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_malloc(size_t __pyx_
  *     return ret
  * 
  */
-    __pyx_t_2 = __Pyx_PyInt_FromSize_t(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 117, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_failed_to_allocate_s_bytes, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 117, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_FromSize_t(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 117, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_4 = PyUnicode_Format(__pyx_kp_u_failed_to_allocate_s_bytes, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 117, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(1, 117, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 117, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(2, 117, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":116
  *         return NULL
@@ -3528,8 +3595,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_malloc(size_t __pyx_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("cysignals.memory.check_malloc", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3550,8 +3617,9 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_realloc(void *__pyx_
   void *__pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
+  void *__pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3574,7 +3642,7 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_realloc(void *__pyx_
  *         return NULL
  *     cdef void* ret = sig_realloc(ptr, n)
  */
-    sig_free(__pyx_v_ptr);
+    sig_free(__pyx_v_ptr); if (unlikely(PyErr_Occurred())) __PYX_ERR(2, 127, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":128
  *     if n == 0:
@@ -3602,7 +3670,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_realloc(void *__pyx_
  *     if unlikely(ret == NULL):
  *         raise MemoryError("failed to allocate %s bytes" % n)
  */
-  __pyx_v_ret = sig_realloc(__pyx_v_ptr, __pyx_v_n);
+  __pyx_t_2 = sig_realloc(__pyx_v_ptr, __pyx_v_n); if (unlikely(__pyx_t_2 == ((void *)NULL) && PyErr_Occurred())) __PYX_ERR(2, 129, __pyx_L1_error)
+  __pyx_v_ret = __pyx_t_2;
 
   /* "cysignals/memory.pxd":130
  *         return NULL
@@ -3621,17 +3690,17 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_realloc(void *__pyx_
  *     return ret
  * 
  */
-    __pyx_t_2 = __Pyx_PyInt_FromSize_t(__pyx_v_n); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 131, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_failed_to_allocate_s_bytes, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 131, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyInt_FromSize_t(__pyx_v_n); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 131, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_4 = PyUnicode_Format(__pyx_kp_u_failed_to_allocate_s_bytes, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(2, 131, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(1, 131, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 131, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(2, 131, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":130
  *         return NULL
@@ -3662,8 +3731,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_realloc(void *__pyx_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("cysignals.memory.check_realloc", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -3684,9 +3753,11 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_calloc(size_t __pyx_
   void *__pyx_r;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
-  PyObject *__pyx_t_2 = NULL;
+  void *__pyx_t_2;
   PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
+  Py_ssize_t __pyx_t_4;
+  Py_UCS4 __pyx_t_5;
+  PyObject *__pyx_t_6 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -3728,7 +3799,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_calloc(size_t __pyx_
  *     if unlikely(ret == NULL):
  *         raise MemoryError("failed to allocate %s * %s bytes" % (nmemb, size))
  */
-  __pyx_v_ret = sig_calloc(__pyx_v_nmemb, __pyx_v_size);
+  __pyx_t_2 = sig_calloc(__pyx_v_nmemb, __pyx_v_size); if (unlikely(__pyx_t_2 == ((void *)NULL) && PyErr_Occurred())) __PYX_ERR(2, 142, __pyx_L1_error)
+  __pyx_v_ret = __pyx_t_2;
 
   /* "cysignals/memory.pxd":143
  *         return NULL
@@ -3746,27 +3818,43 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_calloc(size_t __pyx_
  *         raise MemoryError("failed to allocate %s * %s bytes" % (nmemb, size))             # <<<<<<<<<<<<<<
  *     return ret
  */
-    __pyx_t_2 = __Pyx_PyInt_FromSize_t(__pyx_v_nmemb); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 144, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyInt_FromSize_t(__pyx_v_size); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 144, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(5); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 144, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 144, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_2);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2)) __PYX_ERR(1, 144, __pyx_L1_error);
-    __Pyx_GIVEREF(__pyx_t_3);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_3)) __PYX_ERR(1, 144, __pyx_L1_error);
-    __pyx_t_2 = 0;
-    __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyString_Format(__pyx_kp_s_failed_to_allocate_s_s_bytes, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 144, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 144, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_4);
+    __pyx_t_4 = 0;
+    __pyx_t_5 = 127;
+    __Pyx_INCREF(__pyx_kp_u_failed_to_allocate);
+    __pyx_t_4 += 19;
+    __Pyx_GIVEREF(__pyx_kp_u_failed_to_allocate);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_failed_to_allocate);
+    __pyx_t_6 = __Pyx_PyUnicode_From_size_t(__pyx_v_nmemb, 0, ' ', 'd'); if (unlikely(!__pyx_t_6)) __PYX_ERR(2, 144, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_);
+    __pyx_t_4 += 3;
+    __Pyx_GIVEREF(__pyx_kp_u_);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u_);
+    __pyx_t_6 = __Pyx_PyUnicode_From_size_t(__pyx_v_size, 0, ' ', 'd'); if (unlikely(!__pyx_t_6)) __PYX_ERR(2, 144, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_bytes);
+    __pyx_t_4 += 6;
+    __Pyx_GIVEREF(__pyx_kp_u_bytes);
+    PyTuple_SET_ITEM(__pyx_t_3, 4, __pyx_kp_u_bytes);
+    __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 5, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(2, 144, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_Raise(__pyx_t_4, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __PYX_ERR(1, 144, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_MemoryError, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(2, 144, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(2, 144, __pyx_L1_error)
 
     /* "cysignals/memory.pxd":143
  *         return NULL
@@ -3795,9 +3883,8 @@ static CYTHON_INLINE void *__pyx_f_9cysignals_6memory_check_calloc(size_t __pyx_
 
   /* function exit code */
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_6);
   __Pyx_AddTraceback("cysignals.memory.check_calloc", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -4174,7 +4261,7 @@ static bliss::Graph *__pyx_f_7blisspy_bliss_graph_from_labelled_edges(int __pyx_
  * 
  *     Enr = len(Vout)
  */
-    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_MemoryError, __pyx_tuple__2, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 109, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -5799,23 +5886,25 @@ static PyMethodDef __pyx_methods[] = {
 
 static int __Pyx_CreateStringTabAndInitStrings(void) {
   __Pyx_StringTabEntry __pyx_string_tab[] = {
-    {&__pyx_kp_s_Allocation_failed_for_Graph, __pyx_k_Allocation_failed_for_Graph, sizeof(__pyx_k_Allocation_failed_for_Graph), 0, 0, 1, 0},
+    {&__pyx_kp_u_, __pyx_k_, sizeof(__pyx_k_), 0, 1, 0, 0},
+    {&__pyx_kp_u_Allocation_failed_for_Graph, __pyx_k_Allocation_failed_for_Graph, sizeof(__pyx_k_Allocation_failed_for_Graph), 0, 1, 0, 0},
     {&__pyx_n_s_AssertionError, __pyx_k_AssertionError, sizeof(__pyx_k_AssertionError), 0, 0, 1, 1},
     {&__pyx_n_s_Lnr, __pyx_k_Lnr, sizeof(__pyx_k_Lnr), 0, 0, 1, 1},
     {&__pyx_n_s_MemoryError, __pyx_k_MemoryError, sizeof(__pyx_k_MemoryError), 0, 0, 1, 1},
     {&__pyx_n_s_Vin, __pyx_k_Vin, sizeof(__pyx_k_Vin), 0, 0, 1, 1},
     {&__pyx_n_s_Vnr, __pyx_k_Vnr, sizeof(__pyx_k_Vnr), 0, 0, 1, 1},
     {&__pyx_n_s_Vout, __pyx_k_Vout, sizeof(__pyx_k_Vout), 0, 0, 1, 1},
-    {&__pyx_n_s__5, __pyx_k__5, sizeof(__pyx_k__5), 0, 0, 1, 1},
+    {&__pyx_n_s__6, __pyx_k__6, sizeof(__pyx_k__6), 0, 0, 1, 1},
     {&__pyx_n_s_append, __pyx_k_append, sizeof(__pyx_k_append), 0, 0, 1, 1},
     {&__pyx_n_s_asyncio_coroutines, __pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 0, 1, 1},
     {&__pyx_n_s_automorphism_group_gens_from_edg, __pyx_k_automorphism_group_gens_from_edg, sizeof(__pyx_k_automorphism_group_gens_from_edg), 0, 0, 1, 1},
     {&__pyx_n_s_blisspy, __pyx_k_blisspy, sizeof(__pyx_k_blisspy), 0, 0, 1, 1},
     {&__pyx_kp_s_blisspy_pyx, __pyx_k_blisspy_pyx, sizeof(__pyx_k_blisspy_pyx), 0, 0, 1, 0},
+    {&__pyx_kp_u_bytes, __pyx_k_bytes, sizeof(__pyx_k_bytes), 0, 1, 0, 0},
     {&__pyx_n_s_canonical_form_from_edge_list, __pyx_k_canonical_form_from_edge_list, sizeof(__pyx_k_canonical_form_from_edge_list), 0, 0, 1, 1},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
-    {&__pyx_kp_s_failed_to_allocate_s_bytes, __pyx_k_failed_to_allocate_s_bytes, sizeof(__pyx_k_failed_to_allocate_s_bytes), 0, 0, 1, 0},
-    {&__pyx_kp_s_failed_to_allocate_s_s_bytes, __pyx_k_failed_to_allocate_s_s_bytes, sizeof(__pyx_k_failed_to_allocate_s_s_bytes), 0, 0, 1, 0},
+    {&__pyx_kp_u_failed_to_allocate, __pyx_k_failed_to_allocate, sizeof(__pyx_k_failed_to_allocate), 0, 1, 0, 0},
+    {&__pyx_kp_u_failed_to_allocate_s_bytes, __pyx_k_failed_to_allocate_s_bytes, sizeof(__pyx_k_failed_to_allocate_s_bytes), 0, 1, 0, 0},
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
     {&__pyx_n_s_labels, __pyx_k_labels, sizeof(__pyx_k_labels), 0, 0, 1, 1},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
@@ -5849,9 +5938,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     Enr = len(Vout)
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_Allocation_failed_for_Graph); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 109, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple_);
-  __Pyx_GIVEREF(__pyx_tuple_);
+  __pyx_tuple__2 = PyTuple_Pack(1, __pyx_kp_u_Allocation_failed_for_Graph); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
 
   /* "blisspy.pyx":147
  *     return g
@@ -5860,10 +5949,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     """
  *     Return an unsorted list of labelled edges of a canonical form.
  */
-  __pyx_tuple__2 = PyTuple_Pack(6, __pyx_n_s_Vnr, __pyx_n_s_Vout, __pyx_n_s_Vin, __pyx_n_s_Lnr, __pyx_n_s_labels, __pyx_n_s_partition); if (unlikely(!__pyx_tuple__2)) __PYX_ERR(0, 147, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__2);
-  __Pyx_GIVEREF(__pyx_tuple__2);
-  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_blisspy_pyx, __pyx_n_s_canonical_form_from_edge_list, 147, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_tuple__3 = PyTuple_Pack(6, __pyx_n_s_Vnr, __pyx_n_s_Vout, __pyx_n_s_Vin, __pyx_n_s_Lnr, __pyx_n_s_labels, __pyx_n_s_partition); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__3);
+  __Pyx_GIVEREF(__pyx_tuple__3);
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_blisspy_pyx, __pyx_n_s_canonical_form_from_edge_list, 147, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 147, __pyx_L1_error)
 
   /* "blisspy.pyx":195
  *     return new_edges, relabel
@@ -5872,7 +5961,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     r"""
  *     Return the generators of the automorphism group, projected to only the first partition.
  */
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_blisspy_pyx, __pyx_n_s_automorphism_group_gens_from_edg, 195, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_blisspy_pyx, __pyx_n_s_automorphism_group_gens_from_edg, 195, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -5958,7 +6047,7 @@ static int __Pyx_modinit_type_import_code(void) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_import_code", 0);
   /*--- Type import code ---*/
-  __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 9, __pyx_L1_error)
+  __pyx_t_1 = PyImport_ImportModule(__Pyx_BUILTIN_MODULE_NAME); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_ptype_7cpython_4type_type = __Pyx_ImportType_3_0_11(__pyx_t_1, __Pyx_BUILTIN_MODULE_NAME, "type", 
   #if defined(PYPY_VERSION_NUM) && PYPY_VERSION_NUM < 0x050B0000
@@ -5968,7 +6057,7 @@ static int __Pyx_modinit_type_import_code(void) {
   #else
   sizeof(PyHeapTypeObject), __PYX_GET_STRUCT_ALIGNMENT_3_0_11(PyHeapTypeObject),
   #endif
-  __Pyx_ImportType_CheckSize_Warn_3_0_11); if (!__pyx_ptype_7cpython_4type_type) __PYX_ERR(2, 9, __pyx_L1_error)
+  __Pyx_ImportType_CheckSize_Warn_3_0_11); if (!__pyx_ptype_7cpython_4type_type) __PYX_ERR(3, 9, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -6307,7 +6396,7 @@ if (!__Pyx_RefNanny) {
  *     """
  *     Return an unsorted list of labelled edges of a canonical form.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7blisspy_1canonical_form_from_edge_list, 0, __pyx_n_s_canonical_form_from_edge_list, NULL, __pyx_n_s_blisspy, __pyx_d, ((PyObject *)__pyx_codeobj__3)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7blisspy_1canonical_form_from_edge_list, 0, __pyx_n_s_canonical_form_from_edge_list, NULL, __pyx_n_s_blisspy, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_canonical_form_from_edge_list, __pyx_t_2) < 0) __PYX_ERR(0, 147, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -6319,7 +6408,7 @@ if (!__Pyx_RefNanny) {
  *     r"""
  *     Return the generators of the automorphism group, projected to only the first partition.
  */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7blisspy_3automorphism_group_gens_from_edge_list, 0, __pyx_n_s_automorphism_group_gens_from_edg, NULL, __pyx_n_s_blisspy, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_7blisspy_3automorphism_group_gens_from_edge_list, 0, __pyx_n_s_automorphism_group_gens_from_edg, NULL, __pyx_n_s_blisspy, __pyx_d, ((PyObject *)__pyx_codeobj__5)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_automorphism_group_gens_from_edg, __pyx_t_2) < 0) __PYX_ERR(0, 195, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -6559,6 +6648,250 @@ static PyObject *__Pyx_GetBuiltinName(PyObject *name) {
 #endif
     }
     return result;
+}
+
+/* CIntToDigits */
+static const char DIGIT_PAIRS_10[2*10*10+1] = {
+    "00010203040506070809"
+    "10111213141516171819"
+    "20212223242526272829"
+    "30313233343536373839"
+    "40414243444546474849"
+    "50515253545556575859"
+    "60616263646566676869"
+    "70717273747576777879"
+    "80818283848586878889"
+    "90919293949596979899"
+};
+static const char DIGIT_PAIRS_8[2*8*8+1] = {
+    "0001020304050607"
+    "1011121314151617"
+    "2021222324252627"
+    "3031323334353637"
+    "4041424344454647"
+    "5051525354555657"
+    "6061626364656667"
+    "7071727374757677"
+};
+static const char DIGITS_HEX[2*16+1] = {
+    "0123456789abcdef"
+    "0123456789ABCDEF"
+};
+
+/* BuildPyUnicode */
+static PyObject* __Pyx_PyUnicode_BuildFromAscii(Py_ssize_t ulength, char* chars, int clength,
+                                                int prepend_sign, char padding_char) {
+    PyObject *uval;
+    Py_ssize_t uoffset = ulength - clength;
+#if CYTHON_USE_UNICODE_INTERNALS
+    Py_ssize_t i;
+#if CYTHON_PEP393_ENABLED
+    void *udata;
+    uval = PyUnicode_New(ulength, 127);
+    if (unlikely(!uval)) return NULL;
+    udata = PyUnicode_DATA(uval);
+#else
+    Py_UNICODE *udata;
+    uval = PyUnicode_FromUnicode(NULL, ulength);
+    if (unlikely(!uval)) return NULL;
+    udata = PyUnicode_AS_UNICODE(uval);
+#endif
+    if (uoffset > 0) {
+        i = 0;
+        if (prepend_sign) {
+            __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, 0, '-');
+            i++;
+        }
+        for (; i < uoffset; i++) {
+            __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, i, padding_char);
+        }
+    }
+    for (i=0; i < clength; i++) {
+        __Pyx_PyUnicode_WRITE(PyUnicode_1BYTE_KIND, udata, uoffset+i, chars[i]);
+    }
+#else
+    {
+        PyObject *sign = NULL, *padding = NULL;
+        uval = NULL;
+        if (uoffset > 0) {
+            prepend_sign = !!prepend_sign;
+            if (uoffset > prepend_sign) {
+                padding = PyUnicode_FromOrdinal(padding_char);
+                if (likely(padding) && uoffset > prepend_sign + 1) {
+                    PyObject *tmp;
+                    PyObject *repeat = PyInt_FromSsize_t(uoffset - prepend_sign);
+                    if (unlikely(!repeat)) goto done_or_error;
+                    tmp = PyNumber_Multiply(padding, repeat);
+                    Py_DECREF(repeat);
+                    Py_DECREF(padding);
+                    padding = tmp;
+                }
+                if (unlikely(!padding)) goto done_or_error;
+            }
+            if (prepend_sign) {
+                sign = PyUnicode_FromOrdinal('-');
+                if (unlikely(!sign)) goto done_or_error;
+            }
+        }
+        uval = PyUnicode_DecodeASCII(chars, clength, NULL);
+        if (likely(uval) && padding) {
+            PyObject *tmp = PyNumber_Add(padding, uval);
+            Py_DECREF(uval);
+            uval = tmp;
+        }
+        if (likely(uval) && sign) {
+            PyObject *tmp = PyNumber_Add(sign, uval);
+            Py_DECREF(uval);
+            uval = tmp;
+        }
+done_or_error:
+        Py_XDECREF(padding);
+        Py_XDECREF(sign);
+    }
+#endif
+    return uval;
+}
+
+/* CIntToPyUnicode */
+static CYTHON_INLINE PyObject* __Pyx_PyUnicode_From_size_t(size_t value, Py_ssize_t width, char padding_char, char format_char) {
+    char digits[sizeof(size_t)*3+2];
+    char *dpos, *end = digits + sizeof(size_t)*3+2;
+    const char *hex_digits = DIGITS_HEX;
+    Py_ssize_t length, ulength;
+    int prepend_sign, last_one_off;
+    size_t remaining;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wconversion"
+#endif
+    const size_t neg_one = (size_t) -1, const_zero = (size_t) 0;
+#ifdef __Pyx_HAS_GCC_DIAGNOSTIC
+#pragma GCC diagnostic pop
+#endif
+    const int is_unsigned = neg_one > const_zero;
+    if (format_char == 'X') {
+        hex_digits += 16;
+        format_char = 'x';
+    }
+    remaining = value;
+    last_one_off = 0;
+    dpos = end;
+    do {
+        int digit_pos;
+        switch (format_char) {
+        case 'o':
+            digit_pos = abs((int)(remaining % (8*8)));
+            remaining = (size_t) (remaining / (8*8));
+            dpos -= 2;
+            memcpy(dpos, DIGIT_PAIRS_8 + digit_pos * 2, 2);
+            last_one_off = (digit_pos < 8);
+            break;
+        case 'd':
+            digit_pos = abs((int)(remaining % (10*10)));
+            remaining = (size_t) (remaining / (10*10));
+            dpos -= 2;
+            memcpy(dpos, DIGIT_PAIRS_10 + digit_pos * 2, 2);
+            last_one_off = (digit_pos < 10);
+            break;
+        case 'x':
+            *(--dpos) = hex_digits[abs((int)(remaining % 16))];
+            remaining = (size_t) (remaining / 16);
+            break;
+        default:
+            assert(0);
+            break;
+        }
+    } while (unlikely(remaining != 0));
+    assert(!last_one_off || *dpos == '0');
+    dpos += last_one_off;
+    length = end - dpos;
+    ulength = length;
+    prepend_sign = 0;
+    if (!is_unsigned && value <= neg_one) {
+        if (padding_char == ' ' || width <= length + 1) {
+            *(--dpos) = '-';
+            ++length;
+        } else {
+            prepend_sign = 1;
+        }
+        ++ulength;
+    }
+    if (width > ulength) {
+        ulength = width;
+    }
+    if (ulength == 1) {
+        return PyUnicode_FromOrdinal(*dpos);
+    }
+    return __Pyx_PyUnicode_BuildFromAscii(ulength, dpos, (int) length, prepend_sign, padding_char);
+}
+
+/* JoinPyUnicode */
+static PyObject* __Pyx_PyUnicode_Join(PyObject* value_tuple, Py_ssize_t value_count, Py_ssize_t result_ulength,
+                                      Py_UCS4 max_char) {
+#if CYTHON_USE_UNICODE_INTERNALS && CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
+    PyObject *result_uval;
+    int result_ukind, kind_shift;
+    Py_ssize_t i, char_pos;
+    void *result_udata;
+    CYTHON_MAYBE_UNUSED_VAR(max_char);
+#if CYTHON_PEP393_ENABLED
+    result_uval = PyUnicode_New(result_ulength, max_char);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = (max_char <= 255) ? PyUnicode_1BYTE_KIND : (max_char <= 65535) ? PyUnicode_2BYTE_KIND : PyUnicode_4BYTE_KIND;
+    kind_shift = (result_ukind == PyUnicode_4BYTE_KIND) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_DATA(result_uval);
+#else
+    result_uval = PyUnicode_FromUnicode(NULL, result_ulength);
+    if (unlikely(!result_uval)) return NULL;
+    result_ukind = sizeof(Py_UNICODE);
+    kind_shift = (result_ukind == 4) ? 2 : result_ukind - 1;
+    result_udata = PyUnicode_AS_UNICODE(result_uval);
+#endif
+    assert(kind_shift == 2 || kind_shift == 1 || kind_shift == 0);
+    char_pos = 0;
+    for (i=0; i < value_count; i++) {
+        int ukind;
+        Py_ssize_t ulength;
+        void *udata;
+        PyObject *uval = PyTuple_GET_ITEM(value_tuple, i);
+        if (unlikely(__Pyx_PyUnicode_READY(uval)))
+            goto bad;
+        ulength = __Pyx_PyUnicode_GET_LENGTH(uval);
+        if (unlikely(!ulength))
+            continue;
+        if (unlikely((PY_SSIZE_T_MAX >> kind_shift) - ulength < char_pos))
+            goto overflow;
+        ukind = __Pyx_PyUnicode_KIND(uval);
+        udata = __Pyx_PyUnicode_DATA(uval);
+        if (!CYTHON_PEP393_ENABLED || ukind == result_ukind) {
+            memcpy((char *)result_udata + (char_pos << kind_shift), udata, (size_t) (ulength << kind_shift));
+        } else {
+            #if PY_VERSION_HEX >= 0x030d0000
+            if (unlikely(PyUnicode_CopyCharacters(result_uval, char_pos, uval, 0, ulength) < 0)) goto bad;
+            #elif CYTHON_COMPILING_IN_CPYTHON && PY_VERSION_HEX >= 0x030300F0 || defined(_PyUnicode_FastCopyCharacters)
+            _PyUnicode_FastCopyCharacters(result_uval, char_pos, uval, 0, ulength);
+            #else
+            Py_ssize_t j;
+            for (j=0; j < ulength; j++) {
+                Py_UCS4 uchar = __Pyx_PyUnicode_READ(ukind, udata, j);
+                __Pyx_PyUnicode_WRITE(result_ukind, result_udata, char_pos+j, uchar);
+            }
+            #endif
+        }
+        char_pos += ulength;
+    }
+    return result_uval;
+overflow:
+    PyErr_SetString(PyExc_OverflowError, "join() result is too long for a Python string");
+bad:
+    Py_DECREF(result_uval);
+    return NULL;
+#else
+    CYTHON_UNUSED_VAR(max_char);
+    CYTHON_UNUSED_VAR(result_ulength);
+    CYTHON_UNUSED_VAR(value_count);
+    return PyUnicode_Join(__pyx_empty_unicode, value_tuple);
+#endif
 }
 
 /* PyFunctionFastCall */
@@ -10607,7 +10940,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__5);
+        name = __Pyx_NewRef(__pyx_n_s__6);
     }
     return name;
 }
