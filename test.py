@@ -6,10 +6,9 @@ def test_quick():
     Vin = [1, 2, 3, 4, 0]
     labels = []
     partition = [[0, 1, 2], [3, 4]]
-    certificate = True
     
     result = canonical_form_from_edge_list(
-        Vnr, Vout, Vin, 1, labels, partition, certificate
+        Vnr, Vout, Vin, 1, labels, partition
     )
 
     canonical_edges, relabeling = result

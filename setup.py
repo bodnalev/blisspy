@@ -3,10 +3,11 @@ from Cython.Build import cythonize
 import os
 import glob
 
-current_dir = os.getcwd()
-bliss_include_dir = os.path.join(current_dir, 'include')
-bliss_src_dir = os.path.join(current_dir, 'src')
+bliss_include_dir = 'include'
 
+bliss_src_dir = 'src'
+
+# Use relative paths for source files
 bliss_source_files = glob.glob(os.path.join(bliss_src_dir, '*.cc'))
 #bliss_source_files = [
 #    os.path.join('src', filename)
@@ -46,8 +47,6 @@ setup(
     long_description_content_type='text/markdown',
     long_description=long_desc,
     license="GNU",
-    packages=[''],
-    py_modules=['blisspy'],
     package_data={'': ['*.pxd']},
     include_package_data=True,
     ext_modules=cythonize(extensions, compiler_directives={"language_level": "3"})

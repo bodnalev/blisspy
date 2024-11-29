@@ -45,3 +45,43 @@ compile_commands.json
 
 # Clang coverage
 *.profraw
+
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Cython compiled files
+*.c
+*.cpp
+*.so
+
+# Build directories and artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs, coverage, and temporary files
+*.log
+*.coverage
+.coverage.*
+*.tmp
+*.temp
+*.out
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# Temporary files created by editors
+*.swp
+*.swo
+*.bak
+*~
+
+bliss.cpython-*-x86_64-linux-gnu.so
