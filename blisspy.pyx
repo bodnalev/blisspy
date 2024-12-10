@@ -1,8 +1,3 @@
-# distutils: language = c++
-# distutils: extra_compile_args = -std=c++11
-# distutils: libraries = bliss
-# sage_setup: distribution = sagemath-bliss
-
 r"""
 This code is based on the following:
 
@@ -39,6 +34,12 @@ The code was modified to suit the flag algebra calculations
 # (at your option) any later version.
 #                  https://www.gnu.org/licenses/
 # ****************************************************************************
+
+cdef extern from *:
+    """
+    #define cysigs (*__pyx_vp_9cysignals_7signals_cysigs)
+    #define unlikely(x) __builtin_expect(!!(x), 0)
+    """
 
 from libc.limits cimport LONG_MAX
 from cysignals.memory cimport check_calloc, sig_free

@@ -7,13 +7,7 @@ bliss_include_dir = 'include'
 
 bliss_src_dir = 'src'
 
-# Use relative paths for source files
 bliss_source_files = glob.glob(os.path.join(bliss_src_dir, '*.cc'))
-#bliss_source_files = [
-#    os.path.join('src', filename)
-#    for filename in os.listdir(bliss_src_dir)
-#    if filename.endswith('.cc')
-#]
 
 with open("README.md", "r") as fp:
     long_desc = fp.read()
@@ -49,5 +43,6 @@ setup(
     license="GNU",
     package_data={'': ['*.pxd']},
     include_package_data=True,
-    ext_modules=cythonize(extensions, compiler_directives={"language_level": "3"})
+    ext_modules=cythonize(extensions, compiler_directives={"language_level": "3"}),
+    install_requires=["Cython", "cysignals"]
 )
