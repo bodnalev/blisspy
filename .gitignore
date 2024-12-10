@@ -56,11 +56,6 @@ __pycache__/
 *.cpp
 *.so
 
-# Build directories and artifacts
-build/
-dist/
-*.egg-info/
-
 # Logs, coverage, and temporary files
 *.log
 *.coverage
