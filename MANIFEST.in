@@ -1,4 +1,7 @@
 include README.md
-recursive-include include *
-recursive-include src *
-recursive-include blisspy *.pyx *.pxd *.py
+include COPYING
+include COPYING.LESSER
+
+recursive-include blisspy *.py *.pyx *.pxd *.cpp
+recursive-include include *.h *.hh
+recursive-include src *.cc
