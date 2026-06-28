@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: blisspy
-Version: 0.1
+Version: 0.1.1
 Summary: Python wrapper for the Bliss graph library
 Author: Levente Bodnar
 Author-email: bodnalev@gmail.com
