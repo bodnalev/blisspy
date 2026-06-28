@@ -37,7 +37,7 @@ extensions = [
 
 setup(
     name="blisspy",
-    version="0.1",
+    version="0.1.1",
     author="Levente Bodnar",
     author_email="bodnalev@gmail.com",
     description="Python wrapper for the Bliss graph library",
